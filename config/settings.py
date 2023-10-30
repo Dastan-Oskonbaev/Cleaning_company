@@ -31,9 +31,13 @@ ALLOWED_HOSTS = config('ALLOWED_HOSTS').split(',')
 
 
 # Application definition
-MY_APPS = []
+MY_APPS = [
+    'apps.cleaning',
+]
 
-THIRD_PARTY_APPS = []
+THIRD_PARTY_APPS = [
+
+]
 
 INSTALLED_APPS = [
     'jazzmin',

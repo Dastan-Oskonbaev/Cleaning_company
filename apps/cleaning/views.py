@@ -10,7 +10,7 @@ class IndexView(View):
         about = AboutUs.objects.all()
         services = OurServices.objects.all()
         category = ServicesCategory.objects.all()
-        reviews = Reviews.objects.all().first(4)
+        reviews = Reviews.objects.all().first()
 
         context = {
             'title': 'Главная страница',
