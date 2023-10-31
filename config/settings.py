@@ -205,5 +205,7 @@ JAZZMIN_UI_TWEAKS = {
 # CSRF_COOKIE_DOMAIN = 'example.com'
 # CSRF_TRUSTED_ORIGINS = ['https://example.com']
 
+TELEGRAM_BOT_TOKEN = config('TELEGRAM_BOT_TOKEN')
+
 with contextlib.suppress(ImportError):
     from .local_settings import *

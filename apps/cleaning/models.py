@@ -128,3 +128,42 @@ class OurServices(models.Model):
         verbose_name = _('Наши услуги')
         verbose_name_plural = _('Наши услуги')
 
+
+class Application(models.Model):
+    first_name = models.CharField(
+        _('Имя'),
+        max_length=255,
+    )
+    last_name = models.CharField(
+        _('Фамилия'),
+        max_length=255,
+    )
+    phone_number = models.CharField(
+        _('Номер тел.'),
+        max_length=20,
+    )
+
+    def __str__(self):
+        return f'{self.first_name} {self.last_name}'
+
+    class Meta:
+        verbose_name = _('Заявка')
+        verbose_name_plural = _('Заявки')
+
+
+class Telegram(models.Model):
+    username = models.CharField(
+        _('Никнейм'),
+        max_length=255,
+    )
+    chat_id = models.CharField(
+        _('Chat ID'),
+        max_length=255,
+    )
+
+    def __str__(self):
+        return self.username
+
+    class Meta:
+        verbose_name = _('Телеграм')
+        verbose_name_plural = _('Телеграм')

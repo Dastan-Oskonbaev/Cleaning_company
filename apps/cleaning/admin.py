@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Contact, ServicesCategory, OurServices, AboutUs, Reviews
+from .models import Contact, ServicesCategory, OurServices, AboutUs, Reviews, Application, Telegram
 
 
 @admin.register(Contact)
@@ -108,3 +108,48 @@ class OurServicesAdmin(admin.ModelAdmin):
     )
 
 
+@admin.register(Application)
+class ApplicationAdmin(admin.ModelAdmin):
+    list_display = (
+        'id',
+        'first_name',
+        'last_name',
+        'phone_number',
+    )
+    list_display_links = (
+        'first_name',
+    )
+    search_fields = (
+        'id',
+        'first_name',
+        'last_name',
+        'phone_number',
+    )
+    list_filter = (
+        'id',
+        'first_name',
+        'last_name',
+        'phone_number',
+    )
+
+
+@admin.register(Telegram)
+class TelegramAdmin(admin.ModelAdmin):
+    list_display = (
+        'id',
+        'username',
+        'chat_id',
+    )
+    list_display_links = (
+        'username',
+    )
+    search_fields = (
+        'id',
+        'username',
+        'chat_id',
+    )
+    list_filter = (
+        'id',
+        'username',
+        'chat_id',
+    )
