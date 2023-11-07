@@ -3,18 +3,27 @@
     <div class="container">
         <div class="row justify-content-between">
             <div class="col-12 col-md d-flex align-items-center">
-                <p class="mb-0 phone"><span class="mailus">Позвонить:</span> <a href="tel:+996 (550) 410 995">+996 (550) 410 995</a> , <span
-                        class="mailus"></span> <a href="tel:+996 (705) 410 995">+996 (705) 410 995</a></p>
+                <p class="mb-0 phone"><span class="mailus">Позвонить:</span>{% for p in phone %}<a href="tel:{{ p.phone_number }}"> {{ p.phone_number }} </a>{% endfor %}
             </div>
             <div class="col-12 col-md d-flex justify-content-md-end">
                 <div class="social-media">
                     <p class="mb-0 d-flex">
-                        <a href="https://instagram.com/chisto_chisto.kg?igshid=OGQ5ZDc2ODk2ZA==" class="d-flex align-items-center justify-content-center"><span
+                        {% for con in contact %}
+                        <a href="{{ con.instagram }}" class="d-flex align-items-center justify-content-center"><span
                                 class="fa fa-instagram"><i class="sr-only">Instagram</i></span></a>
-                        <a href="https://api.whatsapp.com/send?phone=996550410995&fbclid=PAAaYeXfuWMGS6k6eHJltIAInnRXAhdtL1NQtm6BOu--hFln74_C0eRdDvb28_aem_AfJBV5UrAkOnU-2veMYakl0n9FWwFZsg6vLyMwVBpu2yDbS3AZ0psiEM1WArSbIMI7E" class="d-flex align-items-center justify-content-center"><span
+                        {% endfor %}
+                        {% for con in contact %}
+                        <a href="{{ con.whatsapp }}" class="d-flex align-items-center justify-content-center"><span
                                 class="fa fa-whatsapp"><i class="sr-only">WhatsApp</i></span></a>
-                        <a href="#" class="d-flex align-items-center justify-content-center"><span
+                        {% endfor %}
+                        {% for con in contact %}
+                        <a href="{{ con.telegram }}" class="d-flex align-items-center justify-content-center"><span
                                 class="fa fa-telegram"><i class="sr-only">Telegram</i></span></a>
+                        {% endfor %}
+                        {% for con in contact %}
+                        <a href="{{ con.tiktok }}" class="d-flex align-items-center justify-content-center"><span
+                                class="fa-brands fa-tiktok"><i class="sr-only">Tiktok</i></span></a>
+                        {% endfor %}
                     </p>
                 </div>
             </div>
@@ -26,7 +35,7 @@
         <a class="navbar-brand" href="{% url 'index' %}">CHISTO_<span>CHISTO.kg</span></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
                 aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="fa fa-bars"></span> Menu
+            <span class="fa fa-bars"></span>
         </button>
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav ml-auto">

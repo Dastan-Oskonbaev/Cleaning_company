@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Contact, ServicesCategory, OurServices, AboutUs, Reviews, Application, Telegram
+from .models import Contact, ServicesCategory, OurServices, AboutUs, Reviews, Application, Telegram, Phone
 
 
 @admin.register(Contact)
@@ -12,7 +12,6 @@ class ContactAdmin(admin.ModelAdmin):
         'tiktok',
         'telegram',
         'whatsapp',
-        'phone_number',
         'address',
     )
     list_display_links = (
@@ -23,6 +22,25 @@ class ContactAdmin(admin.ModelAdmin):
     )
     search_fields = (
         'email',
+    )
+
+
+@admin.register(Phone)
+class PhoneAdmin(admin.ModelAdmin):
+    list_display = (
+        'id',
+        'phone_number',
+    )
+    list_display_links = (
+        'phone_number',
+    )
+    search_fields = (
+        'id',
+        'phone_number',
+    )
+    list_filter = (
+        'id',
+        'phone_number',
     )
 
 

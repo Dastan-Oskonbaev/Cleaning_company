@@ -1,5 +1,4 @@
 from django.db import models
-
 from django.utils.translation import gettext_lazy as _
 
 
@@ -34,12 +33,6 @@ class Contact(models.Model):
         null=True,
         blank=True,
     )
-    phone_number = models.CharField(
-        _('Номер тел.'),
-        max_length=20,
-        null=True,
-        blank=True,
-    )
     address = models.URLField(
         _('Адрес'),
         max_length=100,
@@ -55,6 +48,17 @@ class Contact(models.Model):
         return self.email
 
 
+class Phone(models.Model):
+    phone_number = models.CharField(
+        _('Номер телефона'),
+        max_length=255,
+    )
+
+    class Meta:
+        verbose_name = _('Телефон')
+        verbose_name_plural = _('Телефоны')
+
+
 class AboutUs(models.Model):
     title = models.CharField(
         _('Заголовок'),
@@ -62,6 +66,10 @@ class AboutUs(models.Model):
     )
     description = models.TextField(
         _('Описание'),
+    )
+    image = models.ImageField(
+        _('Изображение'),
+        upload_to='about-us/',
     )
 
     def __str__(self):

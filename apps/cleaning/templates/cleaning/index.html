@@ -22,7 +22,7 @@
         <div class="row d-md-flex justify-content-center">
             <div class="col-md-12">
                 <div class="wrap-appointment bg-white d-md-flex pl-md-4 pb-5 pb-md-0">
-                    <h2>У нас <strong style="color: #ffc107">ПРЕДЗАПИСЬ</strong></h2>
+                    <h2 style="margin-left: 20px">У нас <strong style="color: #ffc107">ПРЕДЗАПИСЬ</strong></h2>
                     <form action="/" class="appointment w-100" method="post">
                         {% csrf_token %}
                         <div class="row justify-content-center">
@@ -62,24 +62,18 @@
         <div class="row d-flex no-gutters">
             <div class="col-md-6 d-flex">
                 <div class="img d-flex align-items-center justify-content-center py-5 py-md-0"
-                     style="background-image:url({% static 'images/aboutus1.jpg' %});">
+                     style="background-image:url({{ about.image.url }});">
                 </div>
             </div>
             <div class="col-md-6 pl-md-5 pt-md-5">
                 <div class="row justify-content-start py-5">
                     <div class="col-md-12 heading-section ftco-animate">
                         <span class="subheading">Клининговая компания «Чисто-Чисто»</span>
-                        <h2 class="mb-4">Убираем чисто и честно!</h2>
-                        <p>Клининговая компания «Чисто-Чисто» тщательно подобрала
-                            профессиональную команду клинеров, работающих в сфере
-                            уборки квартир и других помещений на протяжении долгих лет!
-                            <ul>
-                            <li>Мы работаем по ПРЕДВАРИТЕЛЬНОЙ записи.</li>
-                            <li>К каждому клиенту, помещению и ситуации у нас особый подход.</li>
-                            <li>Учитываем все факторы и работаем для своих клиентов по индивидуальным запросам.</li>
-                            <li>Готовы осуществить самые сложные виды уборок!</li>
-                            <li>Для того, чтобы приступить к уборке, нам нужно заранее осмотреть объект и обозначить план работы.</li>
-                            </ul>
+                        <h2 class="mb-4">{{ about.title }}</h2>
+                        <p>
+                            {% for paragraph in description %}
+                            {{ paragraph }}<br>
+                            {% endfor %}
                         </p>
                     </div>
                 </div>
@@ -120,410 +114,37 @@
     </div>
 </section>
 
-<section class="ftco-section">
-    <div class="container">
-        <div class="row justify-content-center pb-5 mb-3">
-            <div class="col-md-7 heading-section text-center ftco-animate">
-                <span class="subheading">Services</span>
-                <h2>How We Works</h2>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6 col-lg-4 services ftco-animate">
-                <div class="d-block d-flex">
-                    <div class="icon d-flex justify-content-center align-items-center">
-                        <span class="flaticon-workplace"></span>
-                    </div>
-                    <div class="media-body pl-3">
-                        <h3 class="heading">Office Cleaning</h3>
-                        <p>Even the all-powerful Pointing has no control about the blind texts it is an almost
-                            unorthographic.</p>
-                        <p><a href="#" class="btn-custom">Read more</a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4 services ftco-animate">
-                <div class="d-block d-flex">
-                    <div class="icon d-flex justify-content-center align-items-center">
-                        <span class="flaticon-pool"></span>
-                    </div>
-                    <div class="media-body pl-3">
-                        <h3 class="heading">Pool Cleaning</h3>
-                        <p>Even the all-powerful Pointing has no control about the blind texts it is an almost
-                            unorthographic.</p>
-                        <p><a href="#" class="btn-custom">Read more</a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4 services ftco-animate">
-                <div class="d-block d-flex">
-                    <div class="icon d-flex justify-content-center align-items-center">
-                        <span class="flaticon-rug"></span>
-                    </div>
-                    <div class="media-body pl-3">
-                        <h3 class="heading">Carpet Cleaning</h3>
-                        <p>Even the all-powerful Pointing has no control about the blind texts it is an almost
-                            unorthographic.</p>
-                        <p><a href="#" class="btn-custom">Read more</a></p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-4 services ftco-animate">
-                <div class="d-block d-flex">
-                    <div class="icon d-flex justify-content-center align-items-center">
-                        <span class="flaticon-kitchen"></span>
-                    </div>
-                    <div class="media-body pl-3">
-                        <h3 class="heading">Kitchen Cleaning</h3>
-                        <p>Even the all-powerful Pointing has no control about the blind texts it is an almost
-                            unorthographic.</p>
-                        <p><a href="#" class="btn-custom">Read more</a></p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-4 services ftco-animate">
-                <div class="d-block d-flex">
-                    <div class="icon d-flex justify-content-center align-items-center">
-                        <span class="flaticon-garden"></span>
-                    </div>
-                    <div class="media-body pl-3">
-                        <h3 class="heading">Garden Cleaning</h3>
-                        <p>Even the all-powerful Pointing has no control about the blind texts it is an almost
-                            unorthographic.</p>
-                        <p><a href="#" class="btn-custom">Read more</a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4 services ftco-animate">
-                <div class="d-block d-flex">
-                    <div class="icon d-flex justify-content-center align-items-center">
-                        <span class="flaticon-balcony"></span>
-                    </div>
-                    <div class="media-body pl-3">
-                        <h3 class="heading">Window Cleaning</h3>
-                        <p>Even the all-powerful Pointing has no control about the blind texts it is an almost
-                            unorthographic.</p>
-                        <p><a href="#" class="btn-custom">Read more</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="ftco-section ftco-no-pt">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 col-lg-3 pr-md-4 pb-lg-0 pb-4">
-                <div class="heading-section ftco-animate text-center text-lg-left">
-                    <span class="subheading">Team &amp; Staff</span>
-                    <h2>Our Team</h2>
-                    <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It
-                        is a paradisematic country</p>
-                    <p><a href="#" class="btn btn-secondary">View All Staff</a></p>
-                </div>
-            </div>
-            <div class="col-md-4 col-lg-3 ftco-animate d-flex">
-                <div class="staff">
-                    <div class="img-wrap d-flex align-items-stretch">
-                        <div class="img align-self-stretch" style="background-image: url({% static 'images/staff-1.jpg' %});"></div>
-                    </div>
-                    <div class="text pt-3 px-3 pb-4 text-center">
-                        <h3>Lloyd Wilson</h3>
-                        <span class="position mb-2">Office Cleaner</span>
-                        <div class="faded">
-                            <ul class="ftco-social text-center">
-                                <li class="ftco-animate"><a href="#"
-                                                            class="d-flex align-items-center justify-content-center"><span
-                                        class="fa fa-twitter"></span></a></li>
-                                <li class="ftco-animate"><a href="#"
-                                                            class="d-flex align-items-center justify-content-center"><span
-                                        class="fa fa-facebook"></span></a></li>
-                                <li class="ftco-animate"><a href="#"
-                                                            class="d-flex align-items-center justify-content-center"><span
-                                        class="fa fa-google"></span></a></li>
-                                <li class="ftco-animate"><a href="#"
-                                                            class="d-flex align-items-center justify-content-center"><span
-                                        class="fa fa-instagram"></span></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-lg-3 ftco-animate d-flex">
-                <div class="staff">
-                    <div class="img-wrap d-flex align-items-stretch">
-                        <div class="img align-self-stretch" style="background-image: url({% static 'images/staff-2.jpg' %});"></div>
-                    </div>
-                    <div class="text pt-3 px-3 pb-4 text-center">
-                        <h3>Lloyd Wilson</h3>
-                        <span class="position mb-2">Office Cleaner</span>
-                        <div class="faded">
-                            <ul class="ftco-social text-center">
-                                <li class="ftco-animate"><a href="#"
-                                                            class="d-flex align-items-center justify-content-center"><span
-                                        class="fa fa-twitter"></span></a></li>
-                                <li class="ftco-animate"><a href="#"
-                                                            class="d-flex align-items-center justify-content-center"><span
-                                        class="fa fa-facebook"></span></a></li>
-                                <li class="ftco-animate"><a href="#"
-                                                            class="d-flex align-items-center justify-content-center"><span
-                                        class="fa fa-google"></span></a></li>
-                                <li class="ftco-animate"><a href="#"
-                                                            class="d-flex align-items-center justify-content-center"><span
-                                        class="fa fa-instagram"></span></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-lg-3 ftco-animate d-flex">
-                <div class="staff">
-                    <div class="img-wrap d-flex align-items-stretch">
-                        <div class="img align-self-stretch" style="background-image: url({% static 'images/staff-3.jpg' %});"></div>
-                    </div>
-                    <div class="text pt-3 px-3 pb-4 text-center">
-                        <h3>Lloyd Wilson</h3>
-                        <span class="position mb-2">Office Cleaner</span>
-                        <div class="faded">
-                            <ul class="ftco-social text-center">
-                                <li class="ftco-animate"><a href="#"
-                                                            class="d-flex align-items-center justify-content-center"><span
-                                        class="fa fa-twitter"></span></a></li>
-                                <li class="ftco-animate"><a href="#"
-                                                            class="d-flex align-items-center justify-content-center"><span
-                                        class="fa fa-facebook"></span></a></li>
-                                <li class="ftco-animate"><a href="#"
-                                                            class="d-flex align-items-center justify-content-center"><span
-                                        class="fa fa-google"></span></a></li>
-                                <li class="ftco-animate"><a href="#"
-                                                            class="d-flex align-items-center justify-content-center"><span
-                                        class="fa fa-instagram"></span></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="ftco-section testimony-section ftco-bg-dark">
-    <div class="container">
-        <div class="row justify-content-center pb-5 mb-3">
-            <div class="col-md-7 heading-section heading-section-white text-center ftco-animate">
-                <span class="subheading">Testimonies</span>
-                <h2>Happy Customer</h2>
-            </div>
-        </div>
-        <div class="row ftco-animate">
-            <div class="col-md-12">
-                <div class="carousel-testimony owl-carousel ftco-owl">
-                    <div class="item">
-                        <div class="testimony-wrap py-4">
-                            <div class="icon d-flex align-items-center justify-content-center"><span
-                                    class="fa fa-quote-right"></span></div>
-                            <div class="text">
-                                <div class="d-flex align-items-center mb-4">
-                                    <div class="user-img" style="background-image: url({% static 'images/person_1.jpg' %})"></div>
-                                    <div class="pl-3">
-                                        <p class="name">Roger Scott</p>
-                                        <span class="position">Marketing Manager</span>
-                                    </div>
-                                </div>
-                                <p class="mb-1">Far far away, behind the word mountains, far from the countries Vokalia
-                                    and Consonantia, there live the blind texts.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="testimony-wrap py-4">
-                            <div class="icon d-flex align-items-center justify-content-center"><span
-                                    class="fa fa-quote-right"></span></div>
-                            <div class="text">
-                                <div class="d-flex align-items-center mb-4">
-                                    <div class="user-img" style="background-image: url({% static 'images/person_2.jpg' %})"></div>
-                                    <div class="pl-3">
-                                        <p class="name">Roger Scott</p>
-                                        <span class="position">Marketing Manager</span>
-                                    </div>
-                                </div>
-                                <p class="mb-1">Far far away, behind the word mountains, far from the countries Vokalia
-                                    and Consonantia, there live the blind texts.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="testimony-wrap py-4">
-                            <div class="icon d-flex align-items-center justify-content-center"><span
-                                    class="fa fa-quote-right"></span></div>
-                            <div class="text">
-                                <div class="d-flex align-items-center mb-4">
-                                    <div class="user-img" style="background-image: url({% static 'images/person_3.jpg' %})"></div>
-                                    <div class="pl-3">
-                                        <p class="name">Roger Scott</p>
-                                        <span class="position">Marketing Manager</span>
-                                    </div>
-                                </div>
-                                <p class="mb-1">Far far away, behind the word mountains, far from the countries Vokalia
-                                    and Consonantia, there live the blind texts.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="testimony-wrap py-4">
-                            <div class="icon d-flex align-items-center justify-content-center"><span
-                                    class="fa fa-quote-right"></span></div>
-                            <div class="text">
-                                <div class="d-flex align-items-center mb-4">
-                                    <div class="user-img" style="background-image: url({% static 'images/person_1.jpg' %})"></div>
-                                    <div class="pl-3">
-                                        <p class="name">Roger Scott</p>
-                                        <span class="position">Marketing Manager</span>
-                                    </div>
-                                </div>
-                                <p class="mb-1">Far far away, behind the word mountains, far from the countries Vokalia
-                                    and Consonantia, there live the blind texts.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="testimony-wrap py-4">
-                            <div class="icon d-flex align-items-center justify-content-center"><span
-                                    class="fa fa-quote-right"></span></div>
-                            <div class="text">
-                                <div class="d-flex align-items-center mb-4">
-                                    <div class="user-img" style="background-image: url({% static 'images/person_2.jpg' %})"></div>
-                                    <div class="pl-3">
-                                        <p class="name">Roger Scott</p>
-                                        <span class="position">Marketing Manager</span>
-                                    </div>
-                                </div>
-                                <p class="mb-1">Far far away, behind the word mountains, far from the countries Vokalia
-                                    and Consonantia, there live the blind texts.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
 <section class="ftco-section ftco-no-pb">
     <div class="container">
         <div class="row justify-content-center pb-5 mb-3">
             <div class="col-md-12 heading-section  text-center ftco-animate">
-                <span class="subheading">Our Project</span>
-                <h2>We have done many latest cleaning project</h2>
+                <span class="subheading">Отзывы</span>
+                <h2>Мы выполнили много проектов по уборке</h2>
             </div>
         </div>
         <div class="row">
             <div class="col-md-6 col-lg-3 ftco-animate">
-                <div class="work img d-flex align-items-center" style="background-image: url({% static 'images/work-1.jpg' %});">
-                    <a href="{% static 'images/work-1.jpg' %}"
-                       class="icon image-popup d-flex justify-content-center align-items-center">
-                        <span class="fa fa-expand"></span>
+                <div class="work video d-flex align-items-center">
+                    <video width="100%" height="auto" controls>
+                        <source src="{% static 'videos/IMG_0562.MP4' %}" type="video/mp4">
+                        Ваш браузер не поддерживает видео.
+                    </video>
+                    <a href="{% static 'videos/IMG_0562.MP4' %}"
+                       class="icon video-popup d-flex justify-content-center align-items-center">
+                        <span class="fa fa-play"></span>
                     </a>
-                    <div class="desc w-100 px-4 text-center pt-5 mt-5">
-                        <div class="text w-100 mb-3 mt-4">
-                            <h2><a href="#">House Cleaning</a></h2>
-                        </div>
-                    </div>
                 </div>
             </div>
             <div class="col-md-6 col-lg-3 ftco-animate">
-                <div class="work img d-flex align-items-center" style="background-image: url({% static 'images/work-2.jpg' %});">
-                    <a href="{% static 'images/work-2.jpg' %}"
-                       class="icon image-popup d-flex justify-content-center align-items-center">
-                        <span class="fa fa-expand"></span>
+                <div class="work video d-flex align-items-center">
+                    <video width="100%" height="auto" controls>
+                        <source src="{% static 'videos/IMG_0563.MP4' %}" type="video/mp4">
+                        Ваш браузер не поддерживает видео.
+                    </video>
+                    <a href="{% static 'videos/IMG_0563.MP4' %}"
+                       class="icon video-popup d-flex justify-content-center align-items-center">
+                        <span class="fa fa-play"></span>
                     </a>
-                    <div class="desc w-100 px-4 text-center pt-5 mt-5">
-                        <div class="text w-100 mb-3 mt-4">
-                            <h2><a href="#">Window Cleaning</a></h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-3 ftco-animate">
-                <div class="work img d-flex align-items-center" style="background-image: url({% static 'images/work-3.jpg' %});">
-                    <a href="{% static 'images/work-3.jpg' %}"
-                       class="icon image-popup d-flex justify-content-center align-items-center">
-                        <span class="fa fa-expand"></span>
-                    </a>
-                    <div class="desc w-100 px-4 text-center pt-5 mt-5">
-                        <div class="text w-100 mb-3 mt-4">
-                            <h2><a href="#">Pool Cleaning</a></h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-3 ftco-animate">
-                <div class="work img d-flex align-items-center" style="background-image: url({% static 'images/work-4.jpg' %});">
-                    <a href="{% static 'images/work-4.jpg' %}"
-                       class="icon image-popup d-flex justify-content-center align-items-center">
-                        <span class="fa fa-expand"></span>
-                    </a>
-                    <div class="desc w-100 px-4 text-center pt-5 mt-5">
-                        <div class="text w-100 mb-3 mt-4">
-                            <h2><a href="#">Office Cleaning</a></h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-3 ftco-animate">
-                <div class="work img d-flex align-items-center" style="background-image: url({% static 'images/work-5.jpg' %});">
-                    <a href="{% static 'images/work-5.jpg' %}"
-                       class="icon image-popup d-flex justify-content-center align-items-center">
-                        <span class="fa fa-expand"></span>
-                    </a>
-                    <div class="desc w-100 px-4 text-center pt-5 mt-5">
-                        <div class="text w-100 mb-3 mt-4">
-                            <h2><a href="#">Carpet Cleaning</a></h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-3 ftco-animate">
-                <div class="work img d-flex align-items-center" style="background-image: url({% static 'images/work-6.jpg' %});">
-                    <a href="{% static 'images/work-6.jpg' %}"
-                       class="icon image-popup d-flex justify-content-center align-items-center">
-                        <span class="fa fa-expand"></span>
-                    </a>
-                    <div class="desc w-100 px-4 text-center pt-5 mt-5">
-                        <div class="text w-100 mb-3 mt-4">
-                            <h2><a href="#">Garden Cleaning</a></h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-3 ftco-animate">
-                <div class="work img d-flex align-items-center" style="background-image: url({% static 'images/work-7.jpg' %});">
-                    <a href="{% static 'images/work-7.jpg' %}"
-                       class="icon image-popup d-flex justify-content-center align-items-center">
-                        <span class="fa fa-expand"></span>
-                    </a>
-                    <div class="desc w-100 px-4 text-center pt-5 mt-5">
-                        <div class="text w-100 mb-3 mt-4">
-                            <h2><a href="#">Carpet Cleaning</a></h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-3 ftco-animate">
-                <div class="work img d-flex align-items-center" style="background-image: url({% static 'images/work-8.jpg' %});">
-                    <a href="{% static 'images/work-8.jpg' %}"
-                       class="icon image-popup d-flex justify-content-center align-items-center">
-                        <span class="fa fa-expand"></span>
-                    </a>
-                    <div class="desc w-100 px-4 text-center pt-5 mt-5">
-                        <div class="text w-100 mb-3 mt-4">
-                            <h2><a href="#">Pool Cleaning</a></h2>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -611,96 +232,4 @@
     </div>
 </section>
 
-<section class="ftco-section bg-light">
-    <div class="container">
-        <div class="row justify-content-center pb-5 mb-3">
-            <div class="col-md-7 heading-section text-center ftco-animate">
-                <span class="subheading mb-3">Price &amp; Plans</span>
-                <h2>Choose Your Perfect Plans</h2>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6 col-lg-3 ftco-animate">
-                <div class="block-7">
-                    <div class="text-center">
-                        <div class="icon d-flex align-items-center justify-content-center"><span
-                                class="fa flaticon-sprayer"></span></div>
-                        <h4 class="heading-2">Starter</h4>
-                        <span class="price"><sup>$</sup> <span class="number">49</span></span>
-
-                        <ul class="pricing-text mb-5">
-                            <li><span class="fa fa-check mr-2"></span>Bedrooms cleaning</li>
-                            <li><span class="fa fa-check mr-2"></span>Vacuuming</li>
-                            <li><span class="fa fa-check mr-2"></span>Bathroom cleaning</li>
-                            <li><span class="fa fa-check mr-2"></span>Mirrow cleaning</li>
-                            <li><span class="fa fa-check mr-2"></span>Livingroom cleaning</li>
-                        </ul>
-
-                        <a href="#" class="btn btn-primary px-4 py-3">Get Started</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-3 ftco-animate">
-                <div class="block-7 active">
-                    <div class="text-center">
-                        <div class="icon d-flex align-items-center justify-content-center"><span
-                                class="fa flaticon-vacuum-cleaner"></span></div>
-                        <h4 class="heading-2">Standard</h4>
-                        <span class="price"><sup>$</sup> <span class="number">79</span></span>
-
-                        <ul class="pricing-text mb-5">
-                            <li><span class="fa fa-check mr-2"></span>Bedrooms cleaning</li>
-                            <li><span class="fa fa-check mr-2"></span>Vacuuming</li>
-                            <li><span class="fa fa-check mr-2"></span>Bathroom cleaning</li>
-                            <li><span class="fa fa-check mr-2"></span>Mirrow cleaning</li>
-                            <li><span class="fa fa-check mr-2"></span>Livingroom cleaning</li>
-                        </ul>
-
-                        <a href="#" class="btn btn-primary px-4 py-3">Get Started</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-3 ftco-animate">
-                <div class="block-7">
-                    <div class="text-center">
-                        <div class="icon d-flex align-items-center justify-content-center"><span
-                                class="fa flaticon-tap"></span></div>
-                        <h4 class="heading-2">Premium</h4>
-                        <span class="price"><sup>$</sup> <span class="number">109</span></span>
-
-                        <ul class="pricing-text mb-5">
-                            <li><span class="fa fa-check mr-2"></span>Bedrooms cleaning</li>
-                            <li><span class="fa fa-check mr-2"></span>Vacuuming</li>
-                            <li><span class="fa fa-check mr-2"></span>Bathroom cleaning</li>
-                            <li><span class="fa fa-check mr-2"></span>Mirrow cleaning</li>
-                            <li><span class="fa fa-check mr-2"></span>Livingroom cleaning</li>
-                        </ul>
-
-                        <a href="#" class="btn btn-primary px-4 py-3">Get Started</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-3 ftco-animate">
-                <div class="block-7">
-                    <div class="text-center">
-                        <div class="icon d-flex align-items-center justify-content-center"><span
-                                class="fa flaticon-cleaning"></span></div>
-                        <h4 class="heading-2">Platinum</h4>
-                        <span class="price"><sup>$</sup> <span class="number">159</span></span>
-
-                        <ul class="pricing-text mb-5">
-                            <li><span class="fa fa-check mr-2"></span>Bedrooms cleaning</li>
-                            <li><span class="fa fa-check mr-2"></span>Vacuuming</li>
-                            <li><span class="fa fa-check mr-2"></span>Bathroom cleaning</li>
-                            <li><span class="fa fa-check mr-2"></span>Mirrow cleaning</li>
-                            <li><span class="fa fa-check mr-2"></span>Livingroom cleaning</li>
-                        </ul>
-
-                        <a href="#" class="btn btn-primary px-4 py-3">Get Started</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 {% endblock content %}
