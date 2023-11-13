@@ -128,6 +128,10 @@ class OurServices(models.Model):
     description = models.TextField(
         _('Описание'),
     )
+    image = models.ImageField(
+        _('Изображение'),
+        upload_to='services/',
+    )
 
     def __str__(self):
         return self.title
