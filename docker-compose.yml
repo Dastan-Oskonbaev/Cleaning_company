@@ -1,51 +1,61 @@
-version: '3.3'
+version: '3.8'
+
 services:
   nginx:
-    build: ./nginx
+    build:
+      context: ./nginx
     restart: always
     volumes:
-      - static_volume:/home/Cleaning_company/static
-      - media_volume:/home/Cleaning_company/media
-      - /etc/letsencrypt/live/example.com/fullchain.pem:/etc/nginx/certs/fullchain.pem:ro
-      - /etc/letsencrypt/live/example.com/privkey.pem:/etc/nginx/certs/privkey.pem:ro
+      - ./static:/var/www/static
+      - ./media:/var/www/media
+      - /etc/letsencrypt/live/chisto-chisto.kg/fullchain.pem:/etc/nginx/certs/fullchain.pem:ro
+      - /etc/letsencrypt/live/chisto-chisto.kg/privkey.pem:/etc/nginx/certs/privkey.pem:ro
     ports:
       - "80:80"
       - "443:443"
     command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
     depends_on:
       - web
-
+    networks:
+      - my-network
   certbot:
     image: certbot/certbot:latest
     entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
     volumes:
       - ./certbot/www:/var/www/certbot/:rw
       - ./certbot/conf:/etc/letsencrypt/:rw
-
+    networks:
+      - my-network
+  db:
+    image: postgres:12.0-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    networks:
+      - my-network
+    env_file:
+      - .env
   web:
     build:
       context: ./
       dockerfile: Dockerfile
-    command: gunicorn --workers=4 congig.wsgi:application --bind 0.0.0.0:8000
+    command: gunicorn --workers=4 config.wsgi:application --bind 0.0.0.0:8000 && python3 manage.py migrate
     restart: always
     volumes:
-      - static_volume:/home/Cleaning_company/static
-      - media_volume:/home/Cleaning_company/media
+      - ./static:/var/www/static
+      - ./media:/var/www/media
     expose:
       - "8000"
     env_file:
       - .env
     depends_on:
       - db
-
-  db:
-    image: postgres:13.0-alpine
-    volumes:
-      - postgres_data:/var/lib/postgresql/data/
-    env_file:
-      - .env
+    networks:
+      - my-network
 
 volumes:
   postgres_data:
   static_volume:
   media_volume:
+
+networks:
+  my-network:
