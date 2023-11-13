@@ -34,9 +34,10 @@ class IndexView(View):
             description = about.description.split("/")
             context['description'] = description
 
-        if services:
-            service = services.description.split("/")
-            context['service'] = service
+        # if services:
+        #     service = services.description.split("/")
+        #     service = services.all().order_by('description')
+        #     context['service'] = service
 
         return render(request, 'cleaning/index.html', context)
 
