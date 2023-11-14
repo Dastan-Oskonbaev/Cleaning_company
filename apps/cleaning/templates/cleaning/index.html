@@ -123,30 +123,20 @@
             </div>
         </div>
         <div class="row">
+            {% for rev in reviews %}
             <div class="col-md-6 col-lg-3 ftco-animate">
                 <div class="work video d-flex align-items-center">
                     <video width="100%" height="auto" controls>
-                        <source src="{% static 'videos/IMG_0562.MP4' %}" type="video/mp4">
+                        <source src="{{ rev.file.url }}" type="video/mp4">
                         Ваш браузер не поддерживает видео.
                     </video>
-                    <a href="{% static 'videos/IMG_0562.MP4' %}"
+                    <a href="{{ rev.file.url }}"
                        class="icon video-popup d-flex justify-content-center align-items-center">
                         <span class="fa fa-play"></span>
                     </a>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-3 ftco-animate">
-                <div class="work video d-flex align-items-center">
-                    <video width="100%" height="auto" controls>
-                        <source src="{% static 'videos/IMG_0563.MP4' %}" type="video/mp4">
-                        Ваш браузер не поддерживает видео.
-                    </video>
-                    <a href="{% static 'videos/IMG_0563.MP4' %}"
-                       class="icon video-popup d-flex justify-content-center align-items-center">
-                        <span class="fa fa-play"></span>
-                    </a>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
 </section>
