@@ -199,11 +199,11 @@ JAZZMIN_UI_TWEAKS = {
     "actions_sticky_top": False
 }
 # for deploy
-# SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-#
-# CSRF_COOKIE_SECURE = True
-# CSRF_COOKIE_DOMAIN = 'example.com'
-# CSRF_TRUSTED_ORIGINS = ['https://example.com']
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+CSRF_COOKIE_SECURE = True
+CSRF_COOKIE_DOMAIN = 'chisto-chisto.kg'
+CSRF_TRUSTED_ORIGINS = ['https://chisto-chisto.kg']
 
 TELEGRAM_BOT_TOKEN = config('TELEGRAM_BOT_TOKEN')
 
