@@ -15,7 +15,7 @@ class IndexView(View):
         about = AboutUs.objects.all().first()
         services = OurServices.objects.all()
         category = ServicesCategory.objects.all()
-        reviews = Reviews.objects.all().first()
+        reviews = Reviews.objects.all()
 
         form = ApplicationForm()
 
