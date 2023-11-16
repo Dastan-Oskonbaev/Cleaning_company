@@ -179,3 +179,17 @@ class Telegram(models.Model):
     class Meta:
         verbose_name = _('Телеграм')
         verbose_name_plural = _('Телеграм')
+
+
+class Gallery(models.Model):
+    image = models.ImageField(
+        _('Изображение'),
+        upload_to='gallery/',
+    )
+
+    def __str__(self):
+        return 'Изображение до/после'
+
+    class Meta:
+        verbose_name = _('Галлерея')
+        verbose_name_plural = _('Галлерея')

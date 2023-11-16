@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Contact, ServicesCategory, OurServices, AboutUs, Reviews, Application, Telegram, Phone
+from .models import Contact, ServicesCategory, OurServices, AboutUs, Reviews, Application, Telegram, Phone, Gallery
 
 
 @admin.register(Contact)
@@ -170,4 +170,18 @@ class TelegramAdmin(admin.ModelAdmin):
         'id',
         'username',
         'chat_id',
+    )
+
+
+@admin.register(Gallery)
+class GalleryAdmin(admin.ModelAdmin):
+    list_display = (
+        'id',
+        'image',
+    )
+    search_fields = (
+        'id',
+    )
+    list_filter = (
+        'id',
     )

@@ -3,7 +3,7 @@ from datetime import date
 from django.shortcuts import render, redirect
 from django.views import View
 
-from .models import Contact, AboutUs, OurServices, ServicesCategory, Reviews, Phone
+from .models import Contact, AboutUs, OurServices, ServicesCategory, Reviews, Phone, Gallery
 from .forms import ApplicationForm
 from .sender import send_application_to_telegram
 
@@ -16,6 +16,7 @@ class IndexView(View):
         services = OurServices.objects.all()
         category = ServicesCategory.objects.all()
         reviews = Reviews.objects.all()
+        gallery = Gallery.objects.all()
 
         form = ApplicationForm()
 
@@ -28,6 +29,7 @@ class IndexView(View):
             'services': services,
             'phone': phone,
             'form': form,
+            'gallery': gallery,
         }
 
         if about:

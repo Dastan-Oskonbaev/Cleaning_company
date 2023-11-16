@@ -2,188 +2,244 @@
 {% load static %}
 {% block title %}{% endblock title %}
 {% block content %}
-<div class="hero-wrap js-fullheight" style="background-image: url({% static 'images/bg_1.jpg' %});"
-     data-stellar-background-ratio="0.5">
-    <div class="overlay"></div>
-    <div class="container">
-        <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-start"
-             data-scrollax-parent="true">
-            <div class="col-md-6 ftco-animate">
-                <img src="{% static 'images/sticker.webp' %}" style="width: 230px; margin-bottom: 30px">
-                <h1 class="mb-4" style="font-family: 'Sree Krushnadevaraya'; font-size: xxx-large; color: yellow;">Убираем чисто и честно!</h1>
-            </div>
-        </div>
-    </div>
-</div>
+    <style>
+        .services-section {
+            padding-bottom: 2px;
+        }
 
-<section class="ftco-appointment ftco-section ftco-no-pt ftco-no-pb">
-    <div class="overlay"></div>
-    <div class="container">
-        <div class="row d-md-flex justify-content-center">
-            <div class="col-md-12">
-                <div class="wrap-appointment bg-white d-md-flex pl-md-4 pb-5 pb-md-0">
-                    <h2 style="margin-left: 20px">У нас <strong style="color: #ffc107">ПРЕДЗАПИСЬ</strong></h2>
-                    <form action="/" class="appointment w-100" method="post">
-                        {% csrf_token %}
-                        <div class="row justify-content-center">
-                            <div class="col-12 col-md d-flex align-items-center pt-4 pt-md-0">
-                                <div class="form-group py-md-4 py-2 px-4 px-md-0">
-                                    <label for="name" style="color: #ffc107">Имя</label>
-                                    <input type="text" class="form-control" placeholder="Ваше имя" name="first_name">
-                                </div>
-                            </div>
-                            <div class="col-12 col-md d-flex align-items-center pt-4 pt-md-0">
-                                <div class="form-group py-md-4 py-2 px-4 px-md-0">
-                                    <label for="name" style="color: #ffc107">Фамилия</label>
-                                    <input type="text" class="form-control" placeholder="Ваша фамилия" name="last_name">
-                                </div>
-                            </div>
-                            <div class="col-12 col-md d-flex align-items-center">
-                                <div class="form-group py-md-4 py-2 px-4 px-md-0">
-                                    <label for="name" style="color: #ffc107">Номер телефона</label>
-                                    <input type="text" class="form-control" placeholder="Ваш номер телефона" name="phone_number">
-                                </div>
-                            </div>
-                            <div class="col-12 col-md d-flex align-items-center align-items-stretch">
-                                <div class="form-group py-md-4 py-2 px-4 px-md-0 d-flex align-items-stretch" style="background-color: #228B22">
-                                    <input type="submit" value="Оставить заявку" class="btn btn-primary py-3 px-4" style="background-color: #228B22; border-color: #228B22">
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="ftco-section ftco-no-pt ftco-no-pb">
-    <div class="container">
-        <div class="row d-flex no-gutters">
-            <div class="col-md-6 d-flex">
-                <div class="img d-flex align-items-center justify-content-center py-5 py-md-0"
-                     style="background-image:url({{ about.image.url }});">
-                </div>
-            </div>
-            <div class="col-md-6 pl-md-5 pt-md-5">
-                <div class="row justify-content-start py-5">
-                    <div class="col-md-12 heading-section ftco-animate">
-                        <span class="subheading">Клининговая компания «Чисто-Чисто»</span>
-                        <h2 class="mb-4">{{ about.title }}</h2>
-                        <p>
-                            {% for paragraph in description %}
-                            {{ paragraph }}<br>
-                            {% endfor %}
-                        </p>
-                    </div>
-                </div>
-                <div class="row ftco-counter py-5" id="section-counter">
-                    <div class="col-md-6 col-lg-4 d-flex justify-content-center counter-wrap ftco-animate">
-                        <div class="block-18">
-                            <div class="text">
-                                <strong class="number" data-number="12"></strong>
-                            </div>
-                            <div class="text">
-                                <span>лет <br>в клининге</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 d-flex justify-content-center counter-wrap ftco-animate">
-                        <div class="block-18">
-                            <div class="text">
-                                <strong class="number" data-number="2342">0</strong>
-                            </div>
-                            <div class="text">
-                                <span>Довольных <br>Клиентов</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 d-flex justify-content-center counter-wrap ftco-animate">
-                        <div class="block-18">
-                            <div class="text">
-                                <strong class="number" data-number="30">0</strong>
-                            </div>
-                            <div class="text">
-                                <span>чистых <br>обьектов</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="ftco-section ftco-no-pb">
-    <div class="container">
-        <div class="row justify-content-center pb-5 mb-3">
-            <div class="col-md-12 heading-section  text-center ftco-animate">
-                <span class="subheading">Отзывы</span>
-                <h2>Мы выполнили много проектов по уборке</h2>
-            </div>
-        </div>
-        <div class="row">
-            {% for rev in reviews %}
-            <div class="col-md-6 col-lg-3 ftco-animate">
-                <div class="work video d-flex align-items-center">
-                    <video width="100%" height="auto" controls>
-                        <source src="{{ rev.file.url }}" type="video/mp4">
-                        Ваш браузер не поддерживает видео.
-                    </video>
-                    <a href="{{ rev.file.url }}"
-                       class="icon video-popup d-flex justify-content-center align-items-center">
-                        <span class="fa fa-play"></span>
-                    </a>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-    </div>
-</section>
-
-<section class="ftco-section">
-    <div class="container">
-        <div class="row justify-content-center pb-5 mb-3">
-            <div class="col-md-7 heading-section text-center ftco-animate">
-                <span class="subheading"></span>
-                <h2>Наши услуги</h2>
-            </div>
-        </div>
-        <div class="row d-flex" style="display: flex; justify-content: space-evenly;">
-            {% for ser in services %}
-            <div class="col-md-6 col-lg-4 d-flex ftco-animate">
-                <div class="blog-entry align-self-stretch">
-                    <a class="block-20 rounded"
-                       style="background-image: url({{ ser.image.url }});">
-                    </a>
-                    <div class="text mt-3 px-4">
-                        <div class="posted mb-3 d-flex">
-                            <div class="desc pl-3">
-                                <span>{{ ser.category }}</span>
-                            </div>
-                        </div>
-                        <h3 class="heading"><a href="#">{{ ser.title }}</a></h3>
-                        <p>{{ ser.description }}</p>
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-    </div>
-</section>
-
-<section class="ftco-section ftco-intro" style="background-image: url({% static 'images/bg_3.jpg' %});"
+        .gallery-section {
+            padding-top: 2px;
+        }
+    </style>
+    <div class="hero-wrap js-fullheight" style="background-image: url({% static 'images/bg_1.jpg' %});"
          data-stellar-background-ratio="0.5">
-    <div class="overlay"></div>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8 text-center">
-                <h2>Вместе мы будем исследовать что-то новое</h2>
-                <a href="" class="icon-video d-flex align-items-center justify-content-center"><span
-                        class="fa fa-play"></span></a>
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-start"
+                 data-scrollax-parent="true">
+                <div class="col-md-6 ftco-animate">
+                    <img src="{% static 'images/sticker.webp' %}" style="width: 230px; margin-bottom: 30px">
+                    <h1 class="mb-4" style="font-family: 'Sree Krushnadevaraya'; font-size: xxx-large; color: yellow;">
+                        Убираем чисто и честно!</h1>
+                </div>
             </div>
         </div>
     </div>
-</section>
+
+    <section class="ftco-appointment ftco-section ftco-no-pt ftco-no-pb">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row d-md-flex justify-content-center">
+                <div class="col-md-12">
+                    <div class="wrap-appointment bg-white d-md-flex pl-md-4 pb-5 pb-md-0">
+                        <h2 style="margin-left: 20px">У нас <strong style="color: #ffc107">ПРЕДЗАПИСЬ</strong></h2>
+                        <form action="/" class="appointment w-100" method="post">
+                            {% csrf_token %}
+                            <div class="row justify-content-center">
+                                <div class="col-12 col-md d-flex align-items-center pt-4 pt-md-0">
+                                    <div class="form-group py-md-4 py-2 px-4 px-md-0">
+                                        <label for="name" style="color: #ffc107">Имя</label>
+                                        <input type="text" class="form-control" placeholder="Ваше имя"
+                                               name="first_name">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md d-flex align-items-center pt-4 pt-md-0">
+                                    <div class="form-group py-md-4 py-2 px-4 px-md-0">
+                                        <label for="name" style="color: #ffc107">Фамилия</label>
+                                        <input type="text" class="form-control" placeholder="Ваша фамилия"
+                                               name="last_name">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md d-flex align-items-center">
+                                    <div class="form-group py-md-4 py-2 px-4 px-md-0">
+                                        <label for="name" style="color: #ffc107">Номер телефона</label>
+                                        <input type="text" class="form-control" placeholder="Ваш номер телефона"
+                                               name="phone_number">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md d-flex align-items-center align-items-stretch">
+                                    <div class="form-group py-md-4 py-2 px-4 px-md-0 d-flex align-items-stretch"
+                                         style="background-color: #228B22">
+                                        <input type="submit" value="Оставить заявку" class="btn btn-primary py-3 px-4"
+                                               style="background-color: #228B22; border-color: #228B22">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ftco-section ftco-no-pt ftco-no-pb">
+        <div class="container">
+            <div class="row d-flex no-gutters">
+                <div class="col-md-6 d-flex">
+                    <div class="img d-flex align-items-center justify-content-center py-5 py-md-0"
+                         style="background-image:url({{ about.image.url }});">
+                    </div>
+                </div>
+                <div class="col-md-6 pl-md-5 pt-md-5">
+                    <div class="row justify-content-start py-5">
+                        <div class="col-md-12 heading-section ftco-animate">
+                            <span class="subheading">Клининговая компания «Чисто-Чисто»</span>
+                            <h2 class="mb-4">{{ about.title }}</h2>
+                            <p>
+                                {% for paragraph in description %}
+                                    {{ paragraph }}<br>
+                                {% endfor %}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row ftco-counter py-5" id="section-counter">
+                        <div class="col-md-6 col-lg-4 d-flex justify-content-center counter-wrap ftco-animate">
+                            <div class="block-18">
+                                <div class="text">
+                                    <strong class="number" data-number="12"></strong>
+                                </div>
+                                <div class="text">
+                                    <span>лет <br>в клининге</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 d-flex justify-content-center counter-wrap ftco-animate">
+                            <div class="block-18">
+                                <div class="text">
+                                    <strong class="number" data-number="2342">0</strong>
+                                </div>
+                                <div class="text">
+                                    <span>Довольных <br>Клиентов</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 d-flex justify-content-center counter-wrap ftco-animate">
+                            <div class="block-18">
+                                <div class="text">
+                                    <strong class="number" data-number="30">0</strong>
+                                </div>
+                                <div class="text">
+                                    <span>чистых <br>обьектов</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ftco-section ftco-no-pb">
+        <div class="container">
+            <div class="row justify-content-center pb-5 mb-3">
+                <div class="col-md-12 heading-section  text-center ftco-animate">
+                    <span class="subheading">Отзывы</span>
+                    <h2>Мы выполнили много проектов по уборке</h2>
+                </div>
+            </div>
+            <div class="row">
+                {% for rev in reviews %}
+                    <div class="col-md-6 col-lg-3 ftco-animate">
+                        <div class="work video d-flex align-items-center">
+                            <video width="100%" height="auto" controls>
+                                <source src="{{ rev.file.url }}" type="video/mp4">
+                                Ваш браузер не поддерживает видео.
+                            </video>
+                            <a href="{{ rev.file.url }}"
+                               class="icon video-popup d-flex justify-content-center align-items-center">
+                                <span class="fa fa-play"></span>
+                            </a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <section class="ftco-section services-section">
+        <div class="container">
+            <div class="row justify-content-center pb-5 mb-3">
+                <div class="col-md-7 heading-section text-center ftco-animate">
+                    <span class="subheading"></span>
+                    <h2>Наши услуги</h2>
+                </div>
+            </div>
+            <div class="row d-flex" style="display: flex; justify-content: space-evenly;">
+                {% for ser in services %}
+                    <div class="col-md-6 col-lg-4 d-flex ftco-animate">
+                        <div class="blog-entry align-self-stretch">
+                            <a class="block-20 rounded" style="background-image: url({{ ser.image.url }});"></a>
+                            <div class="text mt-3 px-4">
+                                <div class="posted mb-3 d-flex">
+                                    <div class="desc pl-3">
+                                        <span>{{ ser.category }}</span>
+                                    </div>
+                                </div>
+                                <h3 class="heading"><a href="#">{{ ser.title }}</a></h3>
+                                <div class="service-description">
+                                    <p>{{ ser.description | truncatewords_html:20 }}</p>
+                                    <p class="service-description-full" style="display: none;">{{ ser.description }}</p>
+                                </div>
+                                <button class="show-more-btn btn btn-primary">Показать больше</button>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const showMoreBtns = document.querySelectorAll('.show-more-btn');
+
+            showMoreBtns.forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    const description = this.parentElement.querySelector('.service-description-full');
+
+                    if (description.style.display === 'none' || description.style.display === '') {
+                        description.style.display = 'block';
+                        this.textContent = 'Скрыть';
+                    } else {
+                        description.style.display = 'none';
+                        this.textContent = 'Показать больше';
+                    }
+                });
+            });
+        });
+    </script>
+
+    <section class="ftco-section ftco-no-pb gallery-section">
+        <div class="container">
+            <div class="row">
+                <div class="owl-carousel owl-theme">
+                    {% for gal in gallery %}
+                        <div class="item">
+                            <div class="work img d-flex align-items-center"
+                                 style="background-image:url('{{ gal.image.url }}');">
+                                <a href="{{ gal.image.url }}"
+                                   class="icon d-flex justify-content-center align-items-center">
+                                    <span class="fa fa-search"></span>
+                                </a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ftco-section ftco-intro" style="background-image: url({% static 'images/bg_3.jpg' %});"
+             data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8 text-center">
+                    <h2>Вместе мы будем исследовать что-то новое</h2>
+                    <a href="" class="icon-video d-flex align-items-center justify-content-center"><span
+                            class="fa fa-play"></span></a>
+                </div>
+            </div>
+        </div>
+    </section>
 
 {% endblock content %}
