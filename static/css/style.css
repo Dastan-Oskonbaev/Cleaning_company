@@ -3414,7 +3414,7 @@ input[type="button"].btn-block {
 .nav-pills .nav-link.active,
 .nav-pills .show > .nav-link {
   color: #fff;
-  background-color: #007bff; }
+  background-color: #228B22; }
 
 .nav-fill .nav-item {
   -webkit-box-flex: 1;
@@ -3464,6 +3464,7 @@ input[type="button"].btn-block {
     -ms-flex-pack: justify;
     justify-content: space-between; }
 
+/* Общие стили для .navbar-brand */
 .navbar-brand {
   display: inline-block;
   padding-top: 0.3125rem;
@@ -3471,9 +3472,28 @@ input[type="button"].btn-block {
   margin-right: 1rem;
   font-size: 1.25rem;
   line-height: inherit;
-  white-space: nowrap; }
-  .navbar-brand:hover, .navbar-brand:focus {
-    text-decoration: none; }
+  white-space: nowrap;
+  transition: color 0.3s; /* Добавляем плавный переход цвета */
+}
+
+/* Стили при наведении для всех устройств */
+.navbar-brand:hover,
+.navbar-brand:focus {
+  text-decoration: none;
+}
+
+/* Стили для мобильных устройств */
+@media only screen and (max-width: 767px) {
+  /* Цвет текста для chisto- на мобильных устройствах */
+  .navbar-brand {
+    color: black !important; /* Задайте цвет для chisto- на мобильных устройствах */
+  }
+
+  /* Цвет текста для chisto.kg на мобильных устройствах */
+  .navbar-brand span {
+    color: green !important; /* Задайте цвет для chisto.kg на мобильных устройствах */
+  }
+}
 
 .navbar-nav {
   display: -webkit-box;
