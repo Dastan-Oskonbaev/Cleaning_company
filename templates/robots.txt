@@ -10,4 +10,4 @@ User-agent: Googlebot Image
 Allow: /
 Disallow:
 
-sitemap: https://chisto-chisto.kg/sitemap.xml
+sitemap: https://chisto-chisto.kg/sidemapxml.html
