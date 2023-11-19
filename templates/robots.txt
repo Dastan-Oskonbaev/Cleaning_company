@@ -1,0 +1,13 @@
+User-agent: GoogleOther
+Allow: /
+Disallow:
+
+User-agent: Googlebot Desktop
+Allow: /
+Disallow:
+
+User-agent: Googlebot Image
+Allow: /
+Disallow:
+
+sitemap: https://chisto-chisto.kg/sidemapxml.html

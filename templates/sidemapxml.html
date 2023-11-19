@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>{{ request.scheme }}://{{ request.get_host }}</loc>
+        <chagefreq>weekly</chagefreq>
+        <priority>1.0</priority>
+    </url>
+
+    {% for contact in Contact %}
+        <url>
+            <loc>{{ contact.address }}</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+        </url>
+    {% endfor %}
+
+    {% for service_category in ServicesCategory %}
+        {% for service in service_category.services.all %}
+            <url>
+                <loc>{{ request.scheme }}://{{ request.get_host }}/{{ service_category.title }}/{{ service.title }}</loc>
+                <changefreq>monthly</changefreq>
+                <priority>0.6</priority>
+            </url>
+        {% endfor %}
+    {% endfor %}
+
+    {% for review in Reviews %}
+        <url>
+            <loc>{{ request.scheme }}://{{ request.get_host }}/reviews/{{ review.id }}</loc>
+            <changefreq>monthly</changefreq>
+            <priority>0.6</priority>
+        </url>
+    {% endfor %}
+
+    {% for application in Application %}
+        <url>
+            <loc>{{ request.scheme }}://{{ request.get_host }}/applications/{{ application.id }}</loc>
+            <changefreq>monthly</changefreq>
+            <priority>0.6</priority>
+        </url>
+    {% endfor %}
+
+
+    {% for telegram_item in Telegram %}
+        <url>
+            <loc>{{ request.scheme }}://{{ request.get_host }}/telegram_item/{{ telegram_item.id }}</loc>
+            <changefreq>monthly</changefreq>
+            <priority>0.6</priority>
+        </url>
+    {% endfor %}
+
+    {% for gallery_item in Gallery %}
+            <url>
+                <loc>{{ request.scheme }}://{{ request.get_host }}/gallery/{{ gallery_item.id }}</loc>
+                <changefreq>monthly</changefreq>
+                <priority>0.6</priority>
+            </url>
+        {% endfor %}
+
+    {% for about_item in AboutUs %}
+        <url>
+            <loc>{{ request.scheme }}://{{ request.get_host }}/about/{{ about_item.id }}</loc>
+            <changefreq>monthly</changefreq>
+            <priority>0.6</priority>
+        </url>
+    {% endfor %}
+
+    {% for service in OurServices %}
+        <url>
+            <loc>{{ request.scheme }}://{{ request.get_host }}/services/{{ service.id }}</loc>
+            <changefreq>monthly</changefreq>
+            <priority>0.6</priority>
+        </url>
+    {% endfor %}
+
+    <url>
+        <loc>{{ request.scheme }}://{{ request.get_host }}/contacts</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    {% for service_category in ServicesCategory %}
+        <url>
+            <loc>{{ request.scheme }}://{{ request.get_host }}/services/{{ service_category.id }}</loc>
+            <changefreq>monthly</changefreq>
+            <priority>0.6</priority>
+        </url>
+    {% endfor %}
+
+    {% for service_category in ServicesCategory %}
+        {% for service in service_category.services.all %}
+            <url>
+                <loc>{{ request.scheme }}://{{ request.get_host }}/services/{{ service_category.id }}/{{ service.id }}</loc>
+                <changefreq>monthly</changefreq>
+                <priority>0.6</priority>
+            </url>
+        {% endfor %}
+    {% endfor %}
+
+
+</urlset>

@@ -2,8 +2,9 @@ from datetime import date
 
 from django.shortcuts import render, redirect
 from django.views import View
+from django.views.generic import TemplateView
 
-from .models import Contact, AboutUs, OurServices, ServicesCategory, Reviews, Phone, Gallery
+from .models import Contact, AboutUs, OurServices, ServicesCategory, Reviews, Phone, Gallery, Application, Telegram
 from .forms import ApplicationForm
 from .sender import send_application_to_telegram
 
@@ -62,3 +63,26 @@ class IndexView(View):
             return redirect('index')
 
         return render(request, 'cleaning/index.html', {'form': form})
+
+
+class RobotsTxtView(TemplateView):
+    template_name = 'robots.txt'
+    content_type = 'text/plain'
+
+
+class SitemapXmlView(TemplateView):
+    template_name = 'sidemapxml.html'
+    content_type = 'text/xml'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['Contact'] = Contact.objects.all()
+        context['Phone'] = Phone.objects.all()
+        context['AboutUs'] = AboutUs.objects.all()
+        context['Reviews'] = Reviews.objects.all()
+        context['ServicesCategory'] = ServicesCategory.objects.all()
+        context['OurServices'] = OurServices.objects.all()
+        context['Application'] = Application.objects.all()
+        context['Telegram'] = Telegram.objects.all()
+        context['Gallery'] = Gallery.objects.all()
+        return context
