@@ -19,6 +19,14 @@
         .owl-carousel .owl-nav button.owl-next,
         .owl-carousel .owl-nav button.owl-prev {
             font-size: 60px;
+            color: #399432 !important;
+            top: -20px;
+        }
+        .owl-carousel .owl-nav button.owl-next:hover,
+        .owl-carousel .owl-nav button.owl-prev:hover {
+            background-color: #ffffff;
+            border-color: #ffffff;
+            color: #ffbc37 !important;
         }
     </style>
 
@@ -64,7 +72,7 @@
         $(document).ready(function(){
             $(".owl-carousel").owlCarousel({
                 loop: true,
-                margin: 30,
+                margin: 20,
                 nav: true,
                 dots: false,
                 responsive: {

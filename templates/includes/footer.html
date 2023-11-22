@@ -1,25 +1,25 @@
 {% load static %}
 <footer class="footer ftco-section">
     <div class="container">
-        <div class="row" style="display: flex; justify-content: space-evenly">
+        <div class="row" style="display: flex; justify-content: space-evenly; outline-color: #ffbc37">
             <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
-                <h2 class="footer-heading">chisto_chisto.kg</h2>
+                <h2 class="footer-heading" style="color: #ffbc37">chisto_chisto.kg</h2>
                 <p>Клининговая компания
 «Чисто-Чисто» тщательно подобрала профессиональную команду клинеров, работающих в сфере уборки квартир и других помещений на протяжении долгих лет!</p>
                 <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-4">
                     {% for ins in contact %}
-                    <li class="ftco-animate"><a href="{{ ins.instagram }}" style="background-color: #228B22"><span class="fa fa-instagram"></span></a></li>
+                    <li class="ftco-animate"><a href="{{ ins.instagram }}" style="background-color: #399432"><span class="fa fa-instagram"></span></a></li>
                     {% endfor %}
                     {% for wha in contact %}
-                    <li class="ftco-animate"><a href="{{ wha.whatsapp }}" style="background-color: #228B22"><span class="fa fa-whatsapp"></span></a></li>
+                    <li class="ftco-animate"><a href="{{ wha.whatsapp }}" style="background-color: #399432"><span class="fa fa-whatsapp"></span></a></li>
                     {% endfor %}
                     {% for tel in contact %}
-                    <li class="ftco-animate"><a href="{{ tel.telegram }}" style="background-color: #228B22"><span class="fa fa-telegram"></span></a></li>
+                    <li class="ftco-animate"><a href="{{ tel.telegram }}" style="background-color: #399432"><span class="fa fa-telegram"></span></a></li>
                     {% endfor %}
                 </ul>
             </div>
             <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
-                <h2 class="footer-heading">Контакты</h2>
+                <h2 class="footer-heading" style="color: #ffbc37">Контакты</h2>
                 <div class="block-23 mb-3">
                     <ul>
                         {% for ad in contact %}
