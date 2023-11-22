@@ -11,7 +11,7 @@
             padding-top: 2px;
         }
     </style>
-    <div class="hero-wrap js-fullheight" style="background-image: url({% static 'images/bg_1.jpg' %});"
+    <div class="hero-wrap js-fullheight" style="background-image: url({% static 'images/zaq.png' %});"
          data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
         <div class="container">
@@ -19,7 +19,7 @@
                  data-scrollax-parent="true">
                 <div class="col-md-6 ftco-animate">
                     <img src="{% static 'images/sticker.webp' %}" style="width: 230px; margin-bottom: 30px">
-                    <h1 class="mb-4" style="font-family: 'Sree Krushnadevaraya'; font-size: xxx-large; color: yellow;">
+                    <h1 class="mb-4" style="font-family: 'Sree Krushnadevaraya'; font-size: xxx-large; color: #ffbc37;">
                         Убираем чисто и честно!</h1>
                 </div>
             </div>
@@ -32,36 +32,36 @@
             <div class="row d-md-flex justify-content-center">
                 <div class="col-md-12">
                     <div class="wrap-appointment bg-white d-md-flex pl-md-4 pb-5 pb-md-0">
-                        <h2 style="margin-left: 20px">У нас <strong style="color: #ffc107">ПРЕДЗАПИСЬ</strong></h2>
+                        <h2 style="margin-left: 20px">У нас <strong style="color: #ffbc37">ПРЕДЗАПИСЬ</strong></h2>
                         <form action="/" class="appointment w-100" method="post">
                             {% csrf_token %}
                             <div class="row justify-content-center">
                                 <div class="col-12 col-md d-flex align-items-center pt-4 pt-md-0">
                                     <div class="form-group py-md-4 py-2 px-4 px-md-0">
-                                        <label for="name" style="color: #ffc107">Имя</label>
+                                        <label for="name" style="color: #ffbc37">Имя</label>
                                         <input type="text" class="form-control" placeholder="Ваше имя"
                                                name="first_name">
                                     </div>
                                 </div>
                                 <div class="col-12 col-md d-flex align-items-center pt-4 pt-md-0">
                                     <div class="form-group py-md-4 py-2 px-4 px-md-0">
-                                        <label for="name" style="color: #ffc107">Фамилия</label>
+                                        <label for="name" style="color: #ffbc37">Фамилия</label>
                                         <input type="text" class="form-control" placeholder="Ваша фамилия"
                                                name="last_name">
                                     </div>
                                 </div>
                                 <div class="col-12 col-md d-flex align-items-center">
                                     <div class="form-group py-md-4 py-2 px-4 px-md-0">
-                                        <label for="name" style="color: #ffc107">Номер телефона</label>
+                                        <label for="name" style="color: #ffbc37">Номер телефона</label>
                                         <input type="text" class="form-control" placeholder="Ваш номер телефона"
                                                name="phone_number">
                                     </div>
                                 </div>
                                 <div class="col-12 col-md d-flex align-items-center align-items-stretch">
                                     <div class="form-group py-md-4 py-2 px-4 px-md-0 d-flex align-items-stretch"
-                                         style="background-color: #228B22">
+                                         style="background-color: #399432">
                                         <input type="submit" value="Оставить заявку" class="btn btn-primary py-3 px-4"
-                                               style="background-color: #228B22; border-color: #228B22">
+                                               style="background-color: #399432; border-color: #399432">
                                     </div>
                                 </div>
                             </div>
@@ -83,7 +83,7 @@
                 <div class="col-md-6 pl-md-5 pt-md-5">
                     <div class="row justify-content-start py-5">
                         <div class="col-md-12 heading-section ftco-animate">
-                            <span class="subheading">Клининговая компания «Чисто-Чисто»</span>
+                            <span class="subheading" style="color: #399432">Клининговая компания «Чисто-Чисто»</span>
                             <h2 class="mb-4">{{ about.title }}</h2>
                             <p>
                                 {% for paragraph in description %}
@@ -92,7 +92,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="row ftco-counter py-5" id="section-counter">
+                    <div class="row ftco-counter py-5" id="section-counter" style="background-color: #ffbc37">
                         <div class="col-md-6 col-lg-4 d-flex justify-content-center counter-wrap ftco-animate">
                             <div class="block-18">
                                 <div class="text">
@@ -133,7 +133,7 @@
         <div class="container">
             <div class="row justify-content-center pb-5 mb-3">
                 <div class="col-md-12 heading-section  text-center ftco-animate">
-                    <span class="subheading">Отзывы</span>
+                    <span class="subheading" style="color: #399432">Отзывы</span>
                     <h2>Мы выполнили много проектов по уборке</h2>
                 </div>
             </div>
@@ -172,7 +172,7 @@
                             <div class="text mt-3 px-4">
                                 <div class="posted mb-3 d-flex">
                                     <div class="desc pl-3">
-                                        <span>{{ ser.category }}</span>
+                                        <span style="color: #399432">{{ ser.category }}</span>
                                     </div>
                                 </div>
                                 <h3 class="heading"><a href="#">{{ ser.title }}</a></h3>
@@ -180,7 +180,7 @@
                                     <p>{{ ser.description | truncatewords_html:20 }}</p>
                                     <p class="service-description-full" style="display: none;">{{ ser.description }}</p>
                                 </div>
-                                <button class="show-more-btn btn btn-primary">Показать больше</button>
+                                <button class="show-more-btn btn btn-green">Показать больше</button>
                             </div>
                         </div>
                     </div>
@@ -188,6 +188,18 @@
             </div>
         </div>
     </section>
+    <style>
+        .btn-green {
+            background-color: #399432;
+            border-color: #399432;
+            color: #ffffff;
+        }
+        .btn-green:hover {
+            background-color: #ffbc37;
+            border-color: #ffbc37;
+            color: #000000;
+        }
+    </style>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const showMoreBtns = document.querySelectorAll('.show-more-btn');
@@ -228,16 +240,12 @@
         </div>
     </section>
 
-    <section class="ftco-section ftco-intro" style="background-image: url({% static 'images/bg_3.jpg' %});"
+    <section class="ftco-section" style="background-image: url({% static 'images/02.jpg' %});
+             background-repeat: no-repeat;"
              data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-md-8 text-center">
-                    <h2>Вместе мы будем исследовать что-то новое</h2>
-                    <a href="" class="icon-video d-flex align-items-center justify-content-center"><span
-                            class="fa fa-play"></span></a>
-                </div>
             </div>
         </div>
     </section>
