@@ -1,0 +1,50 @@
+{
+	"name": "Чисто-Чисто Клининг",
+	"short_name": "Чисто-Чисто",
+	"start_url": "/",
+	"display": "standalone",
+	"background_color": "#ffffff",
+	"theme_color": "#5bbad5",
+	"icons": [
+		{
+			"src": "../static/images/sticker.webp",
+			"sizes": "72x72",
+			"type": "image/png"
+		},
+		{
+			"src": "../static/images/sticker.webp",
+			"sizes": "96x96",
+			"type": "image/png"
+		},
+		{
+			"src": "../static/images/sticker.webp",
+			"sizes": "128x128",
+			"type": "image/png"
+		},
+		{
+			"src": "../static/images/sticker.webp",
+			"sizes": "144x144",
+			"type": "image/png"
+		},
+		{
+			"src": "../static/images/sticker.webp",
+			"sizes": "152x152",
+			"type": "image/png"
+		},
+		{
+			"src": "../static/images/sticker.webp",
+			"sizes": "192x192",
+			"type": "image/png"
+		},
+		{
+			"src": "../static/images/sticker.webp",
+			"sizes": "384x384",
+			"type": "image/png"
+		},
+		{
+			"src": "../static/images/sticker.webp",
+			"sizes": "512x512",
+			"type": "image/png"
+		}
+	]
+}
