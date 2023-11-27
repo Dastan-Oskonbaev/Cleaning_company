@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="ru">
+
 <head>
     <title>{% block title %}{% endblock %}</title>
     <meta charset="utf-8">
-    <meta name=“robots” content=“index, follow”>
-    <meta name=“description” content=“Клининговая компания «Чисто-Чисто» тщательно подобрала профессиональную команду клинеров, работающих в сфере уборки квартир и других помещений на протяжении долгих лет!”>
+    <meta name="robots" content="index, follow">
+    <meta name="description"
+        content="Клининговая компания «Чисто-Чисто» тщательно подобрала профессиональную команду клинеров, работающих в сфере уборки квартир и других помещений на протяжении долгих лет!">
     <meta name="keyword" content="clining, services, uborka, kg, бишкек, в, и, уборка">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="google-site-verification" content="We5kT937KGZXDdb8nOuKaVcGZdyYZw7ORR2kIS4t7qE" />
@@ -19,6 +21,7 @@
     <meta name="theme-color" content="#ffffff">
 
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
+    <link rel="manifest" href="./manifest.json">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{% static 'css/animate.css' %}">
     <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
@@ -34,6 +37,7 @@
             color: #399432 !important;
             top: -20px;
         }
+
         .owl-carousel .owl-nav button.owl-next:hover,
         .owl-carousel .owl-nav button.owl-prev:hover {
             background-color: #ffffff;
@@ -44,14 +48,15 @@
 
     <!-- Google Analytics -->
     <script>
-    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-    ga('create', 'UA-XXXXX-Y', 'auto');
-    ga('send', 'pageview');
+        window.ga = window.ga || function () { (ga.q = ga.q || []).push(arguments) }; ga.l = +new Date
+        ga('create', 'UA-XXXXX-Y', 'auto')
+        ga('send', 'pageview');
     </script>
     <script async src='https://www.google-analytics.com/analytics.js'></script>
     <!-- End Google Analytics -->
 
 </head>
+
 <body>
     {% include 'includes/header.html' %}
     {% block content %}{% endblock content %}
@@ -60,7 +65,8 @@
     <div id="ftco-loader" class="show fullscreen">
         <svg class="circular" width="48px" height="48px">
             <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"></circle>
-            <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"></circle>
+            <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+                stroke="#F96D00"></circle>
         </svg>
     </div>
 
@@ -76,12 +82,13 @@
     <script src="{% static 'js/owl.carousel.min.js' %}"></script>
     <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
     <script src="{% static 'js/scrollax.min.js' %}"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
     <script src="{% static 'js/google-map.js' %}"></script>
     <script src="{% static 'js/main.js' %}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script>
-        $(document).ready(function(){
+        $(document).ready(function () {
             $(".owl-carousel").owlCarousel({
                 loop: true,
                 margin: 20,
@@ -98,8 +105,9 @@
                         items: 4
                     }
                 }
-            });
+            })
         });
     </script>
 </body>
+
 </html>
