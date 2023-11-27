@@ -18,8 +18,8 @@
             <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-start"
                  data-scrollax-parent="true">
                 <div class="col-md-6 ftco-animate">
-                    <img src="{% static 'images/sticker.webp' %}" style="width: 230px; margin-bottom: 30px">
-                    <h1 class="mb-4" style="font-family: 'Sree Krushnadevaraya'; font-size: xxx-large; color: #ffbc37;">
+                    <img src="{% static 'images/sticker.webp' %}" style="width: 230px; margin-bottom: 30px" alt="Логотип">
+                    <h1 class="mb-4" style="font-family: 'Sree Krushnadevaraya',serif; font-size: xxx-large; color: #ffbc37;">
                         Убираем чисто и честно!</h1>
                 </div>
             </div>
@@ -201,10 +201,10 @@
         }
     </style>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', () => {
             const showMoreBtns = document.querySelectorAll('.show-more-btn');
 
-            showMoreBtns.forEach(function(btn) {
+            showMoreBtns.forEach((btn) => {
                 btn.addEventListener('click', function() {
                     const description = this.parentElement.querySelector('.service-description-full');
 
