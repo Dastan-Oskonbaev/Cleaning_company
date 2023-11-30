@@ -30,29 +30,12 @@
     <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
-        .owl-carousel .owl-nav button.owl-next,
-        .owl-carousel .owl-nav button.owl-prev {
-            font-size: 60px;
-            color: #399432 !important;
-            top: -20px;
-        }
-
-        .owl-carousel .owl-nav button.owl-next:hover,
-        .owl-carousel .owl-nav button.owl-prev:hover {
-            background-color: #ffffff;
-            border-color: #ffffff;
-            color: #ffbc37 !important;
-        }
-    </style>
-
     <script>
         window.ga = window.ga || function () { (ga.q = ga.q || []).push(arguments) }; ga.l = +new Date
         ga('create', 'UA-XXXXX-Y', 'auto')
         ga('send', 'pageview');
     </script>
     <script async src='https://www.google-analytics.com/analytics.js'></script>
-
 </head>
 
 <body>
@@ -86,24 +69,28 @@
     <script src="{% static 'js/main.js' %}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script>
-        $(document).ready(function () {
-            $(".owl-carousel").owlCarousel({
-                loop: true,
-                margin: 20,
-                nav: true,
-                dots: false,
-                responsive: {
-                    0: {
-                        items: 1
-                    },
-                    600: {
-                        items: 3
-                    },
-                    1000: {
-                        items: 4
-                    }
-                }
-            })
+        document.addEventListener('DOMContentLoaded', function () {
+            const images = document.querySelectorAll('.gallery-images img');
+            const overlay = document.getElementById('overlay');
+            const expandedImg = document.getElementById('expandedImg');
+            images.forEach(img => {
+                img.addEventListener('click', function () {
+                    expandedImg.src = this.src;
+                    overlay.style.display = 'block';
+                });
+            });
+            const closeButton = document.querySelector('.close');
+            closeButton.addEventListener('click', function () {
+                overlay.style.display = 'none';
+            });
+            const loadMoreButton = document.getElementById('loadMore');
+            const hiddenImages = Array.from(document.querySelectorAll('.gallery-images .image')).slice(6);
+            loadMoreButton.addEventListener('click', function () {
+                hiddenImages.forEach(img => {
+                    img.style.display = 'block';
+                });
+                loadMoreButton.style.display = 'none';
+            });
         });
     </script>
 </body>

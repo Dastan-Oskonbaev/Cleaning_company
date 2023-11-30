@@ -17,7 +17,7 @@ class IndexView(View):
         services = OurServices.objects.all()
         category = ServicesCategory.objects.all()
         reviews = Reviews.objects.all()
-        gallery = Gallery.objects.all()
+        gallery = Gallery.objects.order_by()[:6]
 
         form = ApplicationForm()
 
@@ -36,11 +36,6 @@ class IndexView(View):
         if about:
             description = about.description.split("/")
             context['description'] = description
-
-        # if services:
-        #     service = services.description.split("/")
-        #     service = services.all().order_by('description')
-        #     context['service'] = service
 
         return render(request, 'cleaning/index.html', context)
 
@@ -63,6 +58,19 @@ class IndexView(View):
             return redirect('index')
 
         return render(request, 'cleaning/index.html', {'form': form})
+
+
+class GalleryView(View):
+    def get(self, request):
+        contact = Contact.objects.all()
+        phone = Phone.objects.all()
+        gallery = Gallery.objects.all()
+        context = {
+            'contact': contact,
+            'phone': phone,
+            'gallery': gallery,
+        }
+        return render(request, 'cleaning/list_gallery.html', context)
 
 
 class RobotsTxtView(TemplateView):

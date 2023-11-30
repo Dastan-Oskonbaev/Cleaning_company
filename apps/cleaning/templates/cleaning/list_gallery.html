@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}До | После{% endblock title %}
+{% block content %}
+    <section id="portfolio" class="portfolio section-bg" style="margin-top: 100px;">
+        <div class="container">
+            <div class="row justify-content-center pb-5 mb-3">
+                <div class="col-md-7 heading-section text-center ftco-animate">
+                    <span class="subheading"></span>
+                    <h2>До | После</h2>
+                </div>
+            </div>
+            <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
+                <div class="gallery-images">
+                    {% for gal in gallery %}
+                        <div class="image">
+                            <img src="{{ gal.image.url }}" alt="Photo">
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock content %}
