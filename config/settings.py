@@ -206,6 +206,9 @@ CSRF_COOKIE_SECURE = True
 CSRF_COOKIE_DOMAIN = 'chisto-chisto.kg'
 CSRF_TRUSTED_ORIGINS = ['https://chisto-chisto.kg']
 
+# CSRF_COOKIE_DOMAIN = None
+# CSRF_TRUSTED_ORIGINS = ['https://chisto-chisto.kg', 'http://127.0.0.1:8000']
+
 TELEGRAM_BOT_TOKEN = config('TELEGRAM_BOT_TOKEN')
 
 with contextlib.suppress(ImportError):
