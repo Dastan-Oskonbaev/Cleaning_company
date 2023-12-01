@@ -391,4 +391,29 @@
         </div>
     </section>
 
+    <!-- Добавление JSON-LD разметки -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "ЧИСТО-ЧИСТО",
+        "description": "Клининговая компания, предоставляющая высококачественные услуги по уборке.",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Улица, номер",
+            "addressLocality": "Город",
+            "postalCode": "Индекс",
+            "addressCountry": "Страна"
+        },
+        "telephone": "+996 550 410 995",
+        "contactPoint": [
+            {
+                "@type": "ContactPoint",
+                "telephone": "+996 705 410 995" // Дополнительный номер телефона
+            }
+        ],
+        "openingHours": "Mo-Su 08:00-20:00"
+    }
+    </script>
+
 {% endblock content %}
