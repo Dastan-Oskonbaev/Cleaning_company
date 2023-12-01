@@ -17,4 +17,15 @@
     </div>
 </section>
 <!-- 404 End -->
+
+<!-- Семантическая разметка JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "WebPage",
+  "name": "Страница не найдена",
+  "description": "Страница, которую вы искали, не найдена на этом сайте. Перейдите на главную страницу.",
+  "url": "{{ request.build_absolute_url }}"
+}
+</script>
 {% endblock %}
