@@ -17,7 +17,7 @@ class IndexView(View):
         services = OurServices.objects.all()
         category = ServicesCategory.objects.all()
         reviews = Reviews.objects.all()
-        gallery = Gallery.objects.order_by()[:6]
+        gallery = Gallery.objects.order_by()[:4]
 
         form = ApplicationForm()
 
