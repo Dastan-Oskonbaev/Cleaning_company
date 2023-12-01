@@ -2,21 +2,21 @@
 {% load static %}
 {% block title %}До | После{% endblock title %}
 {% block content %}
-    <section id="portfolio" class="portfolio section-bg" style="margin-top: 100px;">
-        <div class="container">
-            <div class="row justify-content-center pb-5 mb-3">
-                <div class="col-md-7 heading-section text-center ftco-animate">
-                    <span class="subheading"></span>
-                    <h2>До | После</h2>
-                </div>
-            </div>
-            <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
-                {% for gal in gallery %}
-                    <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                        <img src="{{ gal.image.url }}" alt="Photo" class="img-fluid">
-                    </div>
-                {% endfor %}
+<section id="portfolio" class="portfolio section-bg" style="margin-top: 100px;">
+    <div class="container">
+        <div class="row justify-content-center pb-5 mb-3">
+            <div class="col-md-7 heading-section text-center ftco-animate">
+                <span class="subheading"></span>
+                <h2>До | После</h2>
             </div>
         </div>
-    </section>
+        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
+            {% for gal in gallery %}
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                <img src="{{ gal.image.url }}" alt="Фотография на странице галереии" class="img-fluid">
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
 {% endblock content %}
