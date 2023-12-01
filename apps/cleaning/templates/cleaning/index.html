@@ -169,6 +169,23 @@
             </div>
         </div>
     </section>
+    <!------------------------------    ------------------------------------->
+    <section class="ftco-section" style="margin-top: -50px; margin-bottom: -50px;">
+        <div class="container">
+            <div class="row" style="display: flex; justify-content: center;">
+                <div class="col-md-6 col-lg-4 services ftco-animate" style="display: flex; justify-content: center;">
+                    <div class="d-block d-flex">
+                        <div class="icon d-flex justify-content-center align-items-center" style="margin-left: -300px">
+                            <img src="{% static 'images/danger.webp' %}" style="height: 100%;">
+                        </div>
+                        <div class="media-body pl-3" style="margin-top: 30px;">
+                            <h3 class="heading">Не убираем квартиры с тараканами и после дезинсекции!</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section class="ftco-section ftco-no-pt ftco-no-pb">
         <div class="container">
@@ -204,7 +221,7 @@
                         <div class="col-md-6 col-lg-4 d-flex justify-content-center counter-wrap ftco-animate">
                             <div class="block-18">
                                 <div class="text">
-                                    <strong class="number" data-number="2342">0</strong>
+                                    <strong class="number" data-number="7452">0</strong>
                                 </div>
                                 <div class="text">
                                     <span>Довольных <br>Клиентов</span>
@@ -214,7 +231,7 @@
                         <div class="col-md-6 col-lg-4 d-flex justify-content-center counter-wrap ftco-animate">
                             <div class="block-18">
                                 <div class="text">
-                                    <strong class="number" data-number="30">0</strong>
+                                    <strong class="number" data-number="175">0</strong>
                                 </div>
                                 <div class="text">
                                     <span>чистых <br>обьектов</span>
@@ -244,7 +261,7 @@
                                 <source src="{{ rev.file.url }}" type="video/mp4">
                                 Ваш браузер не поддерживает видео.
                             </video>
-                             <video width="100%" height="auto" controls>
+                            <video width="100%" height="auto" controls>
                                 <source src="{{ rev.file.url }}" type="video/mp4">
                                 Ваш браузер не поддерживает видео.
                             </video>
@@ -350,36 +367,36 @@
         });
     </script>
 
-<section class="ftco-section services-section">
-    <div class="container">
-        <div class="row justify-content-center pb-5 mb-3">
-            <div class="col-md-7 heading-section text-center ftco-animate">
-                <span class="subheading"></span>
-                <h2>До | После</h2>
-            </div>
-        </div>
-        <div class="gallery row">
-            {% for gal in gallery %}
-                <div class="col-lg-6 col-md-6 col-sm-6 col-12 mb-4 image">
-                    <img src="{{ gal.image.url }}" alt="Photo" class="img-fluid">
+    <section class="ftco-section services-section">
+        <div class="container">
+            <div class="row justify-content-center pb-5 mb-3">
+                <div class="col-md-7 heading-section text-center ftco-animate">
+                    <span class="subheading"></span>
+                    <h2>До | После</h2>
                 </div>
-            {% endfor %}
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-md-6 text-center">
-                <a href="{% url 'list_gallery' %}">
-                    <button class="btn btn-green">Ещё</button>
-                </a>
+            </div>
+            <div class="gallery row">
+                {% for gal in gallery %}
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-12 mb-4 image">
+                        <img src="{{ gal.image.url }}" alt="Photo" class="img-fluid">
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-6 text-center">
+                    <a href="{% url 'list_gallery' %}">
+                        <button class="btn btn-green">Ещё</button>
+                    </a>
+                </div>
+            </div>
+            <div id="overlay" class="overlay">
+                <span class="close">&times;</span>
+                <div class="overlay-content">
+                    <img id="expandedImg" style="width:100%">
+                </div>
             </div>
         </div>
-        <div id="overlay" class="overlay">
-            <span class="close">&times;</span>
-            <div class="overlay-content">
-                <img id="expandedImg" style="width:100%">
-            </div>
-        </div>
-    </div>
-</section>
+    </section>
 
 
 
