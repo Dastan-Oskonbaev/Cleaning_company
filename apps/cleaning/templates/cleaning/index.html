@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block title %}ЧИСТО-ЧИСТО | Клининг{% endblock title %}
+{% block canonical %}
+    <link rel="canonical" href="{% url 'имя_вашего_представления' %}">
+{% endblock canonical %}
 {% block content %}
     <style>
         .services-section {
@@ -10,13 +13,6 @@
         .gallery {
             text-align: center;
             margin-top: 20px;
-        }
-
-        .gallery-images {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-gap: 10px;
-            margin-bottom: 20px;
         }
 
         .image img {
@@ -375,7 +371,7 @@
         <div id="overlay" class="overlay">
             <span class="close">&times;</span>
             <div class="overlay-content">
-                <img id="expandedImg" style="width:100%">
+                <img id="expandedImg" style="width:100%" alt="картинка для закрывания">
             </div>
         </div>
     </div>
