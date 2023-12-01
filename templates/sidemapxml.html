@@ -98,5 +98,9 @@
         {% endfor %}
     {% endfor %}
 
-
+    <url>
+            <loc>{{ request.scheme }}://{{ request.get_host }}/gallery/</loc>
+            <changefreq>daily</changefreq>
+            <priority>0.6</priority>
+    </url>
 </urlset>
