@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 from decouple import config
 import contextlib
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -131,10 +132,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 # uncomment before deploy
-STATIC_URL = '/home/Cleaning_company/staticfiles/'
+STATIC_URL = 'static/'
+STATICFILES_DIRS = [BASE_DIR / "static", "var/www/static",]
 STATIC_ROOT = './staticfiles'
-MEDIA_URL = '/home/Cleaning_company/media/'
-MEDIA_ROOT = './media'
+MEDIA_URL = os.path.join(BASE_DIR,'/media/')
+MEDIA_ROOT = 'var/www/media'
 
 # comment out before deploy
 # STATIC_URL = '/static/'
