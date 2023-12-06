@@ -3,7 +3,7 @@ upstream web {
 }
 
 server {
-#    listen 80;
+    
     listen 443 ssl;
     ssl_certificate /etc/nginx/certs/fullchain.pem;
     ssl_certificate_key /etc/nginx/certs/privkey.pem;
@@ -18,12 +18,12 @@ server {
 
       
     location /static/ {
-           root /var/www;
-#        alias /home/Financial_Academy/static/;
+          root /var/www;
+#       alias /home/Financial_Academy/static/;
     }
 
     location /media/ {
-            alias /var/www/;
+            root /var/www;
 #        alias /home/Financial_Academy/media/;
     }
 }

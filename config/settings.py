@@ -135,8 +135,8 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [BASE_DIR / "static", "var/www/static",]
 STATIC_ROOT = './staticfiles'
-MEDIA_URL = os.path.join(BASE_DIR,'/media/')
-MEDIA_ROOT = 'var/www/media'
+MEDIA_URL = 'home/Cleaning_company/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'var/www/media')
 
 # comment out before deploy
 # STATIC_URL = '/static/'
