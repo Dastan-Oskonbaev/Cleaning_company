@@ -8,7 +8,8 @@
     <meta name="robots" content="index, follow">
     <meta name="description"
         content="Клининговая компания «Чисто-Чисто» в Бишкеке гордится своей профессиональной командой клинеров. Мы специализируемся на уборке квартир и других помещений, предлагая высококачественные услуги на протяжении многих лет. Наша цель - обеспечить чистоту и порядок в вашем доме!”">
-    <meta name="keyword" content="clining, services, uborka, kg, бишкек, в, и, уборка, Клининг, Услуги, Уборка, Бишкек, Квартира, Офис, Чистота, Комфорт, Профессиональная уборка, Клининговые услуги, Уборка офисов в Бишкеке, Уборка квартир в Бишкеке, Надежная уборка, Качественный клининг, Чистота и комфорт">
+    <meta name="keyword"
+        content="cleaning, services, uborka, kg, бишкек, в, и, уборка, Клининг, Услуги, Уборка, Бишкек, Квартира, Офис, Чистота, Комфорт, Профессиональная уборка, Клининговые услуги, Уборка офисов в Бишкеке, Уборка квартир в Бишкеке, Надежная уборка, Качественный клининг, Чистота и комфорт">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="google-site-verification" content="We5kT937KGZXDdb8nOuKaVcGZdyYZw7ORR2kIS4t7qE" />
 
@@ -34,6 +35,16 @@
         window.ga = window.ga || function () { (ga.q = ga.q || []).push(arguments) }; ga.l = +new Date
         ga('create', 'UA-XXXXX-Y', 'auto')
         ga('send', 'pageview');
+    </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11425041201">
+    </script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'AW-11425041201');
     </script>
     <script async src='https://www.google-analytics.com/analytics.js'></script>
 </head>
@@ -63,34 +74,34 @@
     <script src="{% static 'js/owl.carousel.min.js' %}"></script>
     <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
     <script src="{% static 'js/scrollax.min.js' %}"></script>
-    <script
-        async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+    <script async
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
     <script src="{% static 'js/google-map.js' %}"></script>
     <script src="{% static 'js/main.js' %}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            const images = document.querySelectorAll('.gallery-images img');
-            const overlay = document.getElementById('overlay');
-            const expandedImg = document.getElementById('expandedImg');
+            const images = document.querySelectorAll('.gallery-images img')
+            const overlay = document.getElementById('overlay')
+            const expandedImg = document.getElementById('expandedImg')
             images.forEach(img => {
                 img.addEventListener('click', function () {
-                    expandedImg.src = this.src;
-                    overlay.style.display = 'block';
-                });
-            });
-            const closeButton = document.querySelector('.close');
+                    expandedImg.src = this.src
+                    overlay.style.display = 'block'
+                })
+            })
+            const closeButton = document.querySelector('.close')
             closeButton.addEventListener('click', function () {
-                overlay.style.display = 'none';
-            });
-            const loadMoreButton = document.getElementById('loadMore');
-            const hiddenImages = Array.from(document.querySelectorAll('.gallery-images .image')).slice(6);
+                overlay.style.display = 'none'
+            })
+            const loadMoreButton = document.getElementById('loadMore')
+            const hiddenImages = Array.from(document.querySelectorAll('.gallery-images .image')).slice(6)
             loadMoreButton.addEventListener('click', function () {
                 hiddenImages.forEach(img => {
-                    img.style.display = 'block';
-                });
-                loadMoreButton.style.display = 'none';
-            });
+                    img.style.display = 'block'
+                })
+                loadMoreButton.style.display = 'none'
+            })
         });
     </script>
 </body>
