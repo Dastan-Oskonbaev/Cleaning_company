@@ -79,7 +79,7 @@ class RobotsTxtView(TemplateView):
 
 
 class SitemapXmlView(TemplateView):
-    template_name = 'sidemapxml.html'
+    template_name = 'sitemapxml.html'
     content_type = 'text/xml'
 
     def get_context_data(self, **kwargs):

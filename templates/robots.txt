@@ -1,3 +1,3 @@
 User-agent: *
 Disallow: */ajax/
-Sitemap: https://chisto-chisto.kg/sidemap.xml
+Sitemap: https://chisto-chisto.kg/sitemap.xml

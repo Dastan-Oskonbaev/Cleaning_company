@@ -2,7 +2,7 @@
 {% load static %}
 {% block title %}ЧИСТО-ЧИСТО | Клининг{% endblock title %}
 {% block canonical %}
-    <link rel="canonical" href="{% url 'имя_вашего_представления' %}">
+    <link rel="canonical" href="{% url 'index' %}">
 {% endblock canonical %}
 {% block content %}
     <style>
@@ -172,7 +172,7 @@
             <div class="col-md-6 col-lg-4 services ftco-animate text-center">
                 <div class="d-block">
                     <div class="icon d-flex justify-content-center align-items-center">
-                        <img src="{% static 'images/danger.webp' %}" style="height: auto; max-width: 100%;">
+                        <img src="{% static 'images/danger.webp' %}" style="height: auto; max-width: 100%;" alt="Опасность картинка">
                     </div>
                     <div class="media-body mt-3">
                         <h3 class="heading">Не убираем квартиры с тараканами и после дезинсекции!</h3>
@@ -292,6 +292,7 @@
                     </div>
                 </div>
             </div>
+        </div>
     </section>
 
     <script>
