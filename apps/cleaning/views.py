@@ -18,6 +18,7 @@ class IndexView(View):
         category = ServicesCategory.objects.all()
         reviews = Reviews.objects.all()
         gallery = Gallery.objects.order_by()[:4]
+        statistic = AboutUs.objects.all().first()
 
         form = ApplicationForm()
 
@@ -31,6 +32,7 @@ class IndexView(View):
             'phone': phone,
             'form': form,
             'gallery': gallery,
+            'statistic': statistic,
         }
 
         if about:

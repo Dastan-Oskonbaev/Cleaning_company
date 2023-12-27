@@ -1,3 +1,5 @@
+import datetime
+
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
@@ -70,6 +72,21 @@ class AboutUs(models.Model):
     image = models.ImageField(
         _('Изображение'),
         upload_to='about-us/',
+    )
+    years = models.PositiveSmallIntegerField(
+        _('Годы'),
+        null=True,
+        blank=True,
+    )
+    clients = models.PositiveSmallIntegerField(
+        _('Клиенты'),
+        null=True,
+        blank=True,
+    )
+    objec = models.PositiveSmallIntegerField(
+        _('Объекты'),
+        null=True,
+        blank=True,
     )
 
     def __str__(self):
