@@ -16,7 +16,6 @@ class IndexView(View):
         about = AboutUs.objects.all().first()
         services = OurServices.objects.all()
         category = ServicesCategory.objects.all()
-        reviews = Reviews.objects.all()
         gallery = Gallery.objects.order_by()[:4]
 
         form = ApplicationForm()
@@ -25,7 +24,6 @@ class IndexView(View):
             'title': 'Главная страница',
             'contact': contact,
             'about': about,
-            'reviews': reviews,
             'category': category,
             'services': services,
             'phone': phone,
@@ -65,10 +63,12 @@ class GalleryView(View):
         contact = Contact.objects.all()
         phone = Phone.objects.all()
         gallery = Gallery.objects.all()
+        video = Reviews.objects.all()
         context = {
             'contact': contact,
             'phone': phone,
             'gallery': gallery,
+            'video': video,
         }
         return render(request, 'cleaning/list_gallery.html', context)
 

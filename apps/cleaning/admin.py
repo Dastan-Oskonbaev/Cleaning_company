@@ -69,19 +69,23 @@ class AboutUsAdmin(admin.ModelAdmin):
 class ReviewsAdmin(admin.ModelAdmin):
     save_on_top = True
     list_display = (
-        'title',
+        'id',
+        'file',
     )
     list_display_links = (
-        'title',
+        'id',
     )
     list_filter = (
-        'title',
+        'id',
+        'file',
     )
     search_fields = (
-        'title',
+        'id',
+        'file',
     )
     ordering = (
-        'title',
+        'id',
+        'file',
     )
 
 

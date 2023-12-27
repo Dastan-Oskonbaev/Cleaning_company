@@ -98,10 +98,6 @@ class AboutUs(models.Model):
 
 
 class Reviews(models.Model):
-    title = models.CharField(
-        _('Заголовок'),
-        max_length=255,
-    )
     file = models.FileField(
         _('Файл'),
         upload_to='reviews/',

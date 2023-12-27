@@ -235,86 +235,6 @@
         </div>
     </section>
 
-    <section class="ftco-section ftco-no-pb">
-        <div class="container">
-            <div class="row justify-content-center pb-5 mb-3">
-                <div class="col-md-12 heading-section  text-center ftco-animate">
-                    <span class="subheading" style="color: #399432">Отзывы</span>
-                    <h2>Мы выполнили много проектов по уборке</h2>
-                </div>
-            </div>
-            <div class="row">
-                {% for rev in reviews %}
-                    <div class="col-md-6 col-lg-3 ftco-animate">
-                        <div class="work video d-flex align-items-center">
-                            <video width="100%" height="auto" controls style="display: none;" id="video-{{ rev.id }}"
-                                   class="review">
-                                <source src="{{ rev.file.url }}" type="video/mp4">
-                                Ваш браузер не поддерживает видео.
-                            </video>
-                            <video width="100%" height="auto" controls>
-                                <source src="{{ rev.file.url }}" type="video/mp4">
-                                Ваш браузер не поддерживает видео.
-                            </video>
-                            <a href="#" class="icon video-popup d-flex justify-content-center align-items-center"
-                               onclick="return playVideo('{{ rev.id }}')">
-                                <span class="fa fa-play"></span>
-                            </a>
-                        </div>
-                    </div>
-                {% endfor %}
-                <div class="row">
-                    {% for rev in reviews %}
-                        <div class="col-md-6 col-lg-3 ftco-animate">
-                            <div class="work video d-flex align-items-center">
-                                <video width="100%" height="auto" controls style="display: none;"
-                                       id="video-{{ rev.id }}"
-                                       class="review">
-                                    <source src="{{ rev.file.url }}" type="video/mp4">
-                                    Ваш браузер не поддерживает видео.
-                                </video>
-                                <video width="100%" height="auto" controls>
-                                    <source src="{{ rev.file.url }}" type="video/mp4">
-                                    Ваш браузер не поддерживает видео.
-                                </video>
-                                <a href="#" class="icon video-popup d-flex justify-content-center align-items-center"
-                                   onclick="return playVideo('{{ rev.id }}')">
-                                    <span class="fa fa-play"></span>
-                                </a>
-                            </div>
-                        </div>
-                    {% endfor %}
-
-                    <div id="modal" class="modal">
-                        <div class="modal-video-controler">
-                            <video id="modal-video" width="100%" controls style="height: 50vh;"></video>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <script>
-        function playVideo(revid) {
-            const video = document.getElementById(`video-${revid}`)
-            const modal = document.getElementById('modal')
-            const modalVideo = document.getElementById('modal-video')
-
-            modal.style.display = 'block'
-            modalVideo.src = video.querySelector('source').src
-            modalVideo.play()
-
-            modal.onclick = function () {
-                modal.style.display = 'none'
-                modalVideo.pause()
-            }
-
-            return false
-        }
-
-    </script>
-
     <section class="ftco-section services-section">
         <div class="container">
             <div class="row justify-content-center pb-5 mb-3">
@@ -385,7 +305,7 @@
             <div class="row justify-content-center pb-5 mb-3">
                 <div class="col-md-7 heading-section text-center ftco-animate">
                     <span class="subheading"></span>
-                    <h2>До | После</h2>
+                    <h2>Мы выполнили много проектов по уборке</h2>
                 </div>
             </div>
         </div>

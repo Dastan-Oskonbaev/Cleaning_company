@@ -7,7 +7,7 @@
         <div class="row justify-content-center pb-5 mb-3">
             <div class="col-md-7 heading-section text-center ftco-animate">
                 <span class="subheading"></span>
-                <h2>До | После</h2>
+                <h2>Мы выполнили много проектов по уборке</h2>
             </div>
         </div>
         <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
@@ -15,6 +15,14 @@
             <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
                 <img src="{{ gal.image.url }}" alt="Фотография на странице галереии" class="img-fluid">
             </div>
+            {% endfor %}
+            {% for vid in video %}
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                    <video controls>
+                        <source src="{{ vid.file.url }}" type="video/mp4">
+                        Ваш браузер не поддерживает видео.
+                    </video>
+                </div>
             {% endfor %}
         </div>
     </div>
