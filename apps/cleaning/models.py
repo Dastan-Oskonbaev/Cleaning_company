@@ -106,7 +106,7 @@ class Reviews(models.Model):
     )
 
     def __str__(self):
-        return self.title
+        return f'{self.file}'
 
     class Meta:
         verbose_name = _('Отзывы')
